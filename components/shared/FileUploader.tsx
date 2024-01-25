@@ -1,38 +1,37 @@
-'use client'
-
-import { useCallback, Dispatch, SetStateAction } from 'react'
-import type { FileWithPath } from '@uploadthing/react'
-import { useDropzone } from '@uploadthing/react/hooks'
-import { generateClientDropzoneAccept } from 'uploadthing/client'
-
-import { Button } from '@/components/ui/button'
-import { convertFileToUrl } from '@/lib/utils'
+import React, { Dispatch, SetStateAction } from 'react';
+import { UploadDropzone } from "@uploadthing/react";
+import type { FileWithPath } from '@uploadthing/react';
+import { generateClientDropzoneAccept } from 'uploadthing/client';
 
 type FileUploaderProps = {
-  onFieldChange: (url: string) => void
-  imageUrl: string
-  setFiles: Dispatch<SetStateAction<File[]>>
-}
+  imageUrl: string;
+  onFieldChange: (url: string) => void;
+  setFiles: Dispatch<SetStateAction<File[]>>;
+};
 
-export function FileUploader({ imageUrl, onFieldChange, setFiles }: FileUploaderProps) {
-  const onDrop = useCallback((acceptedFiles: FileWithPath[]) => {
-    setFiles(acceptedFiles)
-    onFieldChange(convertFileToUrl(acceptedFiles[0]))
-  }, [])
-
-  const { getRootProps, getInputProps } = useDropzone({
-    onDrop,
-    accept: 'image/*' ? generateClientDropzoneAccept(['image/*']) : undefined,
-  })
+const FileUploader: React.FC<FileUploaderProps> = ({ imageUrl, onFieldChange, setFiles }) => {
+  const onDrop = (acceptedFiles: FileWithPath[]) => {
+    setFiles(acceptedFiles);
+    onFieldChange(convertFileToUrl(acceptedFiles[0]));
+  };
 
   return (
-    <div
-      {...getRootProps()}
-      className="flex-center bg-dark-3 flex h-72 cursor-pointer flex-col overflow-hidden rounded-xl bg-grey-50">
-      <input {...getInputProps()} className="cursor-pointer" />
-
+    <UploadDropzone
+      onDrop={onDrop}
+      accept={generateClientDropzoneAccept(['image/*'])}
+      onClientUploadComplete={(res) => {
+        console.log("Files: ", res);
+        alert("Upload Completed");
+      }}
+      onUploadError={(error: Error) => {
+        alert(`ERROR! ${error.message}`);
+      }}
+      onUploadBegin={(name) => {
+        console.log("Uploading: ", name);
+      }}
+    >
       {imageUrl ? (
-        <div className="flex h-full w-full flex-1 justify-center ">
+        <div className="flex h-full w-full flex-1 justify-center">
           <img
             src={imageUrl}
             alt="image"
@@ -51,6 +50,8 @@ export function FileUploader({ imageUrl, onFieldChange, setFiles }: FileUploader
           </Button>
         </div>
       )}
-    </div>
-  )
-}
+    </UploadDropzone>
+  );
+};
+
+export default FileUploader;

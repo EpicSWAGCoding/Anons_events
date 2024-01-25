@@ -11,7 +11,7 @@ import { eventDefaultValues } from "@/constants"
 import Dropdown from "./Dropdown"
 import { Textarea } from "@/components/ui/textarea"
 import { useState } from "react"
-import { FileUploader } from "./FileUploader"
+// import { FileUploader } from "./FileUploader"
 import Image from "next/image"
 import DatePicker from "react-datepicker";
 import { Checkbox } from "../ui/checkbox"
@@ -80,7 +80,8 @@ const EventForm = ({ userId, type }: EventFormProps) => {
                     </FormItem>
                     )}
                 />
-                <FormField
+                FileUploader
+                {/* <FormField
               control={form.control}
               name="imageUrl"
               render={({ field }) => (
@@ -95,7 +96,7 @@ const EventForm = ({ userId, type }: EventFormProps) => {
                   <FormMessage />
                 </FormItem>
               )}
-            />
+            /> */}
             </div>
 
             <div className="flex flex-col gap-5 md:flex-row">
