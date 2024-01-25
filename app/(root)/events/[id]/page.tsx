@@ -1,5 +1,5 @@
 // import CheckoutButton from '@/components/shared/CheckoutButton';
-// import Collection from '@/components/shared/Collection';
+import Collection from '@/components/shared/Collection';
 import { getEventById, getRelatedEventsByCategory } from '@/lib/actions/event.actions'
 import { formatDateTime } from '@/lib/utils';
 import { SearchParamProps } from '@/types'
@@ -83,7 +83,7 @@ const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) 
     <section className="wrapper my-8 flex flex-col gap-8 md:gap-12">
       <h2 className="h2-bold">Related Events</h2>
 
-      {/* <Collection 
+      <Collection 
           data={relatedEvents?.data}
           emptyTitle="No Events Found"
           emptyStateSubtext="Come back later"
@@ -91,7 +91,7 @@ const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) 
           limit={3}
           page={searchParams.page as string}
           totalPages={relatedEvents?.totalPages}
-        /> */}
+        />
     </section>
     </>
   )
