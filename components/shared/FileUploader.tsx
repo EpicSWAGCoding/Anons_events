@@ -5,6 +5,7 @@ import { useDropzone } from '@uploadthing/react/hooks'
 import { generateClientDropzoneAccept } from 'uploadthing/client'
 
 import { Button } from '@/components/ui/button'
+import { convertFileToUrl } from '@/lib/utils'
 
 type FileUploaderProps = {
   onFieldChange: (url: string) => void
@@ -15,6 +16,7 @@ type FileUploaderProps = {
 export function FileUploader({ imageUrl, onFieldChange, setFiles }: FileUploaderProps) {
   const onDrop = useCallback((acceptedFiles: File[]) => {
     setFiles(acceptedFiles);
+    onFieldChange(convertFileToUrl(acceptedFiles[0]));
   }, []);
 
   const { getRootProps, getInputProps } = useDropzone({
