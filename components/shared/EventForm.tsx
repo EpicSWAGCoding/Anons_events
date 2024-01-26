@@ -111,7 +111,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
             render={({ field }) => (
               <FormItem className="w-full">
                 <FormControl>
-                  <Input placeholder="Event title" {...field} className="input-field" />
+                  <Input placeholder="Название мероприятия" {...field} className="input-field" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -138,7 +138,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
               render={({ field }) => (
                 <FormItem className="w-full">
                   <FormControl className="h-72">
-                    <Textarea placeholder="Description" {...field} className="textarea rounded-2xl" />
+                    <Textarea placeholder="Описание" {...field} className="textarea rounded-2xl" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -177,7 +177,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
                         height={24}
                       />
 
-                      <Input placeholder="Event location or Online" {...field} className="input-field" />
+                      <Input placeholder="Место проведения мероприятия или Онлайн" {...field} className="input-field" />
                     </div>
 
                   </FormControl>
@@ -202,7 +202,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
                         height={24}
                         className="filter-grey"
                       />
-                      <p className="ml-3 whitespace-nowrap text-grey-600">Start Date:</p>
+                      <p className="ml-3 whitespace-nowrap text-grey-600">Начало мероприятия:</p>
                       <DatePicker 
                         selected={field.value} 
                         onChange={(date: Date) => field.onChange(date)} 
@@ -233,7 +233,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
                         height={24}
                         className="filter-grey"
                       />
-                      <p className="ml-3 whitespace-nowrap text-grey-600">End Date:</p>
+                      <p className="ml-3 whitespace-nowrap text-grey-600">Окончание мероприятия:</p>
                       <DatePicker 
                         selected={field.value} 
                         onChange={(date: Date) => field.onChange(date)} 
@@ -266,7 +266,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
                         height={24}
                         className="filter-grey"
                       />
-                      <Input type="number" placeholder="Price" {...field} className="p-regular-16 border-0 bg-grey-50 outline-offset-0 focus:border-0 focus-visible:ring-0 focus-visible:ring-offset-0" />
+                      <Input type="number" placeholder="Цена" {...field} className="p-regular-16 border-0 bg-grey-50 outline-offset-0 focus:border-0 focus-visible:ring-0 focus-visible:ring-offset-0" />
                       <FormField
                         control={form.control}
                         name="isFree"
@@ -274,7 +274,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
                           <FormItem>
                             <FormControl>
                               <div className="flex items-center">
-                                <label htmlFor="isFree" className="whitespace-nowrap pr-3 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Free Ticket</label>
+                                <label htmlFor="isFree" className="whitespace-nowrap pr-3 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Бесплатно</label>
                                 <Checkbox
                                   onCheckedChange={field.onChange}
                                   checked={field.value}

@@ -1,14 +1,14 @@
 export const headerLinks = [
     {
-      label: 'Home',
+      label: 'Главная',
       route: '/',
     },
     {
-      label: 'Create Event',
+      label: 'Создать мероприятие',
       route: '/events/create',
     },
     {
-      label: 'My Profile',
+      label: 'Мой профиль',
       route: '/profile',
     },
   ]
