@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Announcement - Description of the project
 
-First, run the development server:
+The Announcement project is a final qualification work (WRC) and is an information system designed to manage and organize events in an educational university environment. The system covers various aspects of planning, registration and participation in events, ensuring effective communication between participants.
 
+Technologies and tools
+The project is being developed using technology:
+
+- Next.js: For building scalable and efficient web applications.
+- MongoDB and Mongoose: For storing and managing data related to events and participants.
+- React and React Hook Form: To create a dynamic and interactive user interface.
+- Stripe: To provide a payment system and registration for paid events.
+- Tailwind CSS: To style the user interface with a convenient approach to creating an adaptive design.
+- Zod: For data validation and security when processing user input.
+## Project structure
+The main components of the project are distributed as follows:
+- `/app:` Here are the main files and the structure of the application itself, such as routing, configurations and basic logical components.
+- `/components:` This folder contains React components that are used in various parts of the application and components of the shadcn-ui package
+- `/constans:` The folder contains files with constants used in various parts of the project.
+- `/lib:` This folder contains the main tools for working with the database: sending queries, uploading images, database models, validation
+- `/public:` This folder contains static files such as images, fonts, or other resources that should be accessible directly from the browser.
+- `/types:` There are files with TypeScript types for the project. They provide static typing for the code, which improves the readability and security of the application.
+## Installation
+
+1. Clone a repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/your_username/your_project.git
+cd your_project
 ```
+2. Install dependencies:
+```bash
+npm install   # или yarn install
+```
+3. Launch a project:
+```bash
+npm start   # или yarn start
+```
+## Environment Variables
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To run this project, you will need to add the following environment variables to your .env.local file
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+`NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`
+`CLERK_SECRET_KEY`
+`NEXT_PUBLIC_CLERK_SIGN_IN_UR`
+`NEXT_PUBLIC_CLERK_SIGN_UP_URL=`
+`NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL`
+`NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL`
+`MONGODB_URI`
+`WEBHOOK_SECRET`
+`UPLOADTHING_SECRET`
+`UPLOADTHING_APP_ID`
+`NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`
+`STRIPE_SECRET_KEY`
+`STRIPE_WEBHOOK_SECRET`
+`NEXT_PUBLIC_SERVER_URL`
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Demo
 
-To learn more about Next.js, take a look at the following resources:
+![hero_image](https://github.com/EpicSWAGCoding/Anons_events/blob/main/public/hero_image.png?raw=true)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[Demo live](https://anons-events.vercel.app/)
+## Feedback
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+If you have any feedback, please reach out to us at i@epicswag123.ru
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Authors
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [@EpicSWAG](https://github.com/EpicSWAGCoding)
+
