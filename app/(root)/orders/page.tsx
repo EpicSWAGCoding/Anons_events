@@ -27,7 +27,7 @@ const Orders = async ({ searchParams }: SearchParamProps) => {
               <th className="min-w-[250px] py-3 text-left">ID мероприятия</th>
               <th className="min-w-[200px] flex-1 py-3 pr-4 text-left">Название мероприятия</th>
               <th className="min-w-[150px] py-3 text-left">Покупатель</th>
-              <th className="min-w-[100px] py-3 text-left">Организатор</th>
+              <th className="min-w-[100px] py-3 text-left">Дата</th>
               <th className="min-w-[100px] py-3 text-right">Стоимость</th>
             </tr>
           </thead>
