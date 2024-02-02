@@ -25,14 +25,14 @@ import { IEvent } from "@/lib/database/models/event.model"
 
 type EventFormProps = {
   userId: string
-  type: "Create" | "Update"
+  type: "Создать" | "Обновить"
   event?: IEvent,
   eventId?: string
 }
 
 const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
   const [files, setFiles] = useState<File[]>([])
-  const initialValues = event && type === 'Update' 
+  const initialValues = event && type === 'Обновить' 
     ? { 
       ...event, 
       startDateTime: new Date(event.startDateTime), 
@@ -61,7 +61,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
       uploadedImageUrl = uploadedImages[0].url
     }
 
-    if(type === 'Create') {
+    if(type === 'Создать') {
       try {
         const newEvent = await createEvent({
           event: { ...values, imageUrl: uploadedImageUrl },
@@ -78,7 +78,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
       }
     }
 
-    if(type === 'Update') {
+    if(type === 'Обновить') {
       if(!eventId) {
         router.back()
         return;
@@ -208,7 +208,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
                         onChange={(date: Date) => field.onChange(date)} 
                         showTimeSelect
                         timeInputLabel="Time:"
-                        dateFormat="MM/dd/yyyy h:mm aa"
+                        dateFormat="dd.MM.yyyy h:mm aa"
                         wrapperClassName="datePicker"
                       />
                     </div>
@@ -239,7 +239,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
                         onChange={(date: Date) => field.onChange(date)} 
                         showTimeSelect
                         timeInputLabel="Time:"
-                        dateFormat="MM/dd/yyyy h:mm aa"
+                        dateFormat="dd.MM.yyyy h:mm aa"
                         wrapperClassName="datePicker"
                       />
                     </div>

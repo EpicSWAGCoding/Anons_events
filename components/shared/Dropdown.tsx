@@ -52,7 +52,7 @@ import {
     return (
       <Select onValueChange={onChangeHandler} defaultValue={value}>
         <SelectTrigger className="select-field">
-          <SelectValue placeholder="Category" />
+          <SelectValue placeholder="Категории" />
         </SelectTrigger>
         <SelectContent>
           {categories.length > 0 && categories.map((category) => (
@@ -62,17 +62,17 @@ import {
           ))}
   
           <AlertDialog>
-            <AlertDialogTrigger className="p-medium-14 flex w-full rounded-sm py-3 pl-8 text-primary-500 hover:bg-primary-50 focus:text-primary-500">Add new category</AlertDialogTrigger>
+            <AlertDialogTrigger className="p-medium-14 flex w-full rounded-sm py-3 pl-8 text-primary-500 hover:bg-primary-50 focus:text-primary-500">Добавить новую категорию</AlertDialogTrigger>
             <AlertDialogContent className="bg-white">
               <AlertDialogHeader>
-                <AlertDialogTitle>New Category</AlertDialogTitle>
+                <AlertDialogTitle>Новая категория</AlertDialogTitle>
                 <AlertDialogDescription>
-                  <Input type="text" placeholder="Category name" className="input-field mt-3" onChange={(e) => setNewCategory(e.target.value)} />
+                  <Input type="text" placeholder="Название категории" className="input-field mt-3" onChange={(e) => setNewCategory(e.target.value)} />
                 </AlertDialogDescription>
               </AlertDialogHeader>
               <AlertDialogFooter>
-                <AlertDialogCancel>Cancel</AlertDialogCancel>
-                <AlertDialogAction onClick={() => startTransition(handleAddCategory)}>Add</AlertDialogAction>
+                <AlertDialogCancel>Отменить</AlertDialogCancel>
+                <AlertDialogAction onClick={() => startTransition(handleAddCategory)}>Добавить</AlertDialogAction>
               </AlertDialogFooter>
             </AlertDialogContent>
           </AlertDialog>
