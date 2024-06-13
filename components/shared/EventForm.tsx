@@ -49,6 +49,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
         let uploadedImageUrl = values.imageUrl;
 
         if (files.length > 0) {
+            console.log("Starting file upload...");
             const uploadedImages = await startUpload(files);
 
             if (!uploadedImages) {
@@ -60,6 +61,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
         }
 
         try {
+            console.log("Submitting form data...");
             if (type === 'Создать') {
                 const newEvent = await createEvent({
                     event: { ...values, imageUrl: uploadedImageUrl },
